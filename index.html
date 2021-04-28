@@ -30,19 +30,19 @@
         <!-- inizio vue js #root -->
         <div id="root">
 
-            <div class="genre_filter">
-                
-                <label for="genre_filter">Selezione genere</label>
-                <select id="genre_filter" v-model="disksFilter">
-                    <option v-for="genre in genres">
-                        {{genre}}
-                    </option>
-                </select>
-
-            </div>
-
             <!-- inizio contenitore lista dischi -->
             <div class="disk_container">
+
+                <div class="genre_filter">
+                
+                    <label for="genre_filter">Select genre:</label>
+                    <select id="genre_filter" v-model="disksFilter">
+                        <option v-for="genre in genres">
+                            {{genre}}
+                        </option>
+                    </select>
+    
+                </div>
 
                 <!-- inizio lista dischi -->
                 <ul class="disk_list">

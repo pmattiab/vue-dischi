@@ -15,6 +15,8 @@ var app = new Vue(
 
         methods: {},
 
+        created() {},
+
         // funzioni in mounted che partono dopo il caricamento dell'HTML
         mounted() {
 
@@ -22,12 +24,20 @@ var app = new Vue(
             axios
                 .get("https://flynn.boolean.careers/exercises/api/array/music")
                 .then((response) => {
-
+                    
+                    // variabile result = oggetto risposta
                     const result = response.data;
 
-                    // copio il risultato ottenuto nell'array dei dischi
+                    // dichiaro l'array di dischi in data uguale
+                    // al valore response dell'oggetto result
                     this.disks = result.response;
 
+                    // ordino l'array dei dischi (oggetti) in base al valore year
+                    this.disks.sort(function(firstDisk, secondDisk) {
+                        return (firstDisk.year) - (secondDisk.year)
+                    });
+
+                    // pusho ne'array dei generi All
                     this.genres.push("All");
 
                     // ciclo forEach su tutti gli oggetti dell'array disks
@@ -40,8 +50,6 @@ var app = new Vue(
                         }
 
                     });
-
-                    console.log(this.genres);
                     
                 });
         }
