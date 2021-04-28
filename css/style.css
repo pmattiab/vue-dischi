@@ -19,7 +19,7 @@ li {
 
 /* HEADER */
 header {
-    height: 90px;
+    height: 80px;
     padding: 10px;
     background-color: #2d3b46;
 }
@@ -31,7 +31,7 @@ header img {
 
 /* MAIN */
 main {
-    height: calc(100% - 150px);
+    height: calc(100% - 130px);
     background-color: #1e2e3b;
 }
 
@@ -104,8 +104,8 @@ main {
 
 /* FOOTER */
 footer {
-    height: 60px;
-    padding-top: 20px;
+    height: 50px;
+    padding-top: 15px;
     background-color: #2d3b46;
     text-align: center;
     font-style: italic;
