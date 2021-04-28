@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk List</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+<body>
+
+    <!-- INIZIO HEADER -->
+    <header>
+        
+        <!-- logo -->
+        <img src="img/download.png" alt="logo">
+
+    </header>
+    <!-- FINE HEADER -->
+    
+    <!-- INIZIO MAIN -->
+    <main>
+
+        <!-- inizio vue js #root -->
+        <div id="root">
+
+            <!-- inizio contenitore lista dischi -->
+            <div class="disk_container">
+
+                <!-- inizio lista dischi -->
+                <ul class="disk_list">
+
+                    <!-- inizio singolo disco -->
+                    <li v-for="disk in disks" class="single_disk">
+
+                        <!-- ul dei dettagli del disco -->
+                        <ul class="disk_details">
+                            <li><img :src="disk.poster" alt="disk.title"></li>
+                            <li class="disk_title">{{disk.title}}</li>
+                            <li class="disk_author">{{disk.author}}</li>
+                            <li class="disk_year">{{disk.year}}</li>
+                        </ul>
+
+                    </li>
+                    <!-- fine singolo disco -->
+
+                </ul>
+                <!-- fine lista dischi -->
+
+            </div>
+            <!-- inizio contenitore lista dischi -->
+
+        </div>
+        <!-- fine vue js #root -->
+
+    </main>
+    <!-- FINE MAIN -->
+
+    <!-- INIZIO FOOTER -->
+    <footer>
+        <span><b>@pmattiab</b></span>
+        <img src="img/bool_logo.png" alt="boolean">
+        <span>disk list with</span>
+        <img src="img/vue_logo.png" alt="vue">
+    </footer>
+    <!-- FINE FOOTER -->
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/script.js"></script>   
+
+</body>
+</html>

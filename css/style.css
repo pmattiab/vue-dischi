@@ -1,0 +1,98 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COMMON */
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: white;
+    width: 100%;
+    height: 100vh;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* HEADER */
+header {
+    height: 90px;
+    padding: 10px;
+    background-color: #2d3b46;
+}
+
+header img {
+    height: 100%;
+    width: auto;
+}
+
+/* MAIN */
+main {
+    height: calc(100% - 150px);
+    background-color: #1e2e3b;
+}
+
+#root {
+    height: 100%;
+}
+
+/* dischi */
+.disk_container {
+    height: 100%;
+    padding: 50px;
+}
+
+.disk_list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.single_disk {
+    width: calc(100% / 7);
+    background-color: #2d3b46;
+    margin: 15px 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.single_disk img {
+    width: 170px;
+    height: auto;
+}
+
+.single_disk .disk_title {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.single_disk .disk_author {
+    font-size: 16px;
+    color: gray;
+}
+
+.single_disk .disk_year {
+    font-size: 16px;
+    color: gray;
+}
+
+/* FOOTER */
+footer {
+    height: 60px;
+    padding-top: 20px;
+    background-color: #2d3b46;
+    text-align: center;
+    font-style: italic;
+}
+
+footer img {
+    margin: 0 3px;
+    width: 25px;
+    height: auto;
+    vertical-align: middle;
+}
