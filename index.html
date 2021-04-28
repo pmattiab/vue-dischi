@@ -30,6 +30,17 @@
         <!-- inizio vue js #root -->
         <div id="root">
 
+            <div class="genre_filter">
+                
+                <label for="genre_filter">Selezione genere</label>
+                <select id="genre_filter" v-model="disksFilter">
+                    <option v-for="genre in genres">
+                        {{genre}}
+                    </option>
+                </select>
+
+            </div>
+
             <!-- inizio contenitore lista dischi -->
             <div class="disk_container">
 
@@ -37,7 +48,10 @@
                 <ul class="disk_list">
 
                     <!-- inizio singolo disco -->
-                    <li v-for="disk in disks" class="single_disk">
+                    <li
+                        v-for="disk in disks"
+                        v-if="disksFilter == 'All' || disk.genre == disksFilter"
+                        class="single_disk">
 
                         <!-- ul dei dettagli del disco -->
                         <ul class="disk_details">
