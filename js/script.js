@@ -10,7 +10,7 @@ var app = new Vue(
             // array dischi inizialmente vuoto
             disks: [],
             genres: [],
-            disksFilter: "All"
+            disksFilter: ""
         },
 
         methods: {},
@@ -34,19 +34,21 @@ var app = new Vue(
 
                     // ordino l'array dei dischi (oggetti) in base al valore year
                     this.disks.sort(function(firstDisk, secondDisk) {
-                        return (firstDisk.year) - (secondDisk.year)
+                        return (firstDisk.year) - (secondDisk.year);
                     });
 
-                    // pusho ne'array dei generi All
-                    this.genres.push("All");
+                    // si può scrivere anche così
+                    // this.disks.sort((a, b) => {
+                    //     return a.year - b.year;
+                    // });
 
                     // ciclo forEach su tutti gli oggetti dell'array disks
-                    this.disks.forEach(element => {
+                    this.disks.forEach(disk => {
 
                         // per pushare, se non già inclusi,
                         // i generi nell'array genres in data
-                        if (!this.genres.includes(element.genre)) {
-                            this.genres.push(element.genre);
+                        if (!this.genres.includes(disk.genre)) {
+                            this.genres.push(disk.genre);
                         }
 
                     });

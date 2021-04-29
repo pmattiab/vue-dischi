@@ -37,9 +37,8 @@
                 
                     <label for="genre_filter">Select genre:</label>
                     <select id="genre_filter" v-model="disksFilter">
-                        <option v-for="genre in genres">
-                            {{genre}}
-                        </option>
+                        <option value="">All</option>
+                        <option v-for="genre in genres" :value="genre">{{genre}}</option>
                     </select>
     
                 </div>
@@ -50,7 +49,7 @@
                     <!-- inizio singolo disco -->
                     <li
                         v-for="disk in disks"
-                        v-if="disksFilter == 'All' || disk.genre == disksFilter"
+                        v-if="disksFilter == '' || disk.genre == disksFilter"
                         class="single_disk">
 
                         <!-- ul dei dettagli del disco -->
